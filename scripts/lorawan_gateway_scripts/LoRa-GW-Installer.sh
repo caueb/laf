@@ -108,6 +108,7 @@ echo " "
 echo "Choose frequency band / region of Gateway:"
 echo "<1> US915"
 echo "<2> EU868"
+echo "<3> AU915"
 
 read -n1 -p "Please enter number: " band
 echo " "
@@ -240,6 +241,9 @@ EOEX'
 ;;
   2) echo "------ Setting up EU868 region ------"
 eval "sudo cp $localFolder/lora/packet_forwarder/lora_pkt_fwd/cfg/global_conf.json.PCB_E286.EU868.basic $localFolder/lora/packet_forwarder/lora_pkt_fwd/global_conf.json"
+;;
+3) echo "------- Setting up AU915 region --------"
+eval "sudo cp $localFolder/lora/packet_forwarder/lora_pkt_fwd/cfg/global_conf.AU915.json.basic $localFolder/lora/packet_forwarder/lora_pkt_fwd/global_conf.json"
 ;;
   *) echo "------ Input error. Not setting up Gateway region ------";;
 esac
